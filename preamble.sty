@@ -1,0 +1,117 @@
+%% Packages
+\usepackage{amsmath, amsthm, amsfonts, amssymb, amscd}
+\usepackage{thmtools}
+\usepackage{mathrsfs}
+\usepackage{cancel}
+\usepackage[margin=3cm]{geometry}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{proof}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{environ}
+\usepackage{multirow}
+\usepackage{parskip}
+
+%% Figures Packages
+
+%% Pagestyle
+\newlength{\tabcont}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\geometry{margin=1in, headsep=0.25in}
+\newtheorem{note}{Nota}
+
+%% NewCommands
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\msf}[1]{\mathsf{#1}}
+\newcommand{\mbb}[1]{\mathbb{#1}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\im}[1]{\text{\normalfont Im}(#1)}
+\newcommand{\subs}[2]{\setcounter{subsection}{#1 - 1}\subsection{#2}}
+\newcommand\overtext[2]
+{\stackrel{\mathclap{\normalfont\mbox{#1}}}{#2}}
+\renewcommand\qedsymbol{$\blacksquare$}
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+\newcommand{\rp}[1]{{\left(#1\right)}}
+\newcommand{\db}[1]{{[\![#1]\!]}}
+\newcommand\restr[2]{{\left.\kern-\nulldelimiterspace#1\vphantom{\big|}\right|_{#2}}}
+\newcommand\floor[1]{{\left\lfloor#1\right\rfloor}}
+\newcommand\ceil[1]{{\left\lceil#1\right\rceil}}
+\renewcommand*{\proofname}{Prova}
+\renewcommand\refname{Referências Bibliográficas}
+\newcommand{\cl}[1]{\colorlet{shadecolor}{#1}}
+\DeclareMathOperator{\cf}{cf}
+\newcommand{\dd}{\mathrm{d}}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\ln}[1]{{\mathop{\ell n\rp{#1}}}}
+\renewcommand{\contentsname}{Sumário}
+
+%% Theorems, definitions, corollaries and lemmas
+\declaretheoremstyle[bodyfont=\normalfont]{normalbody}
+\declaretheorem[numberwithin=section, style=normalbody, name=Teorema]{thm}
+\declaretheorem[numberwithin=section, style=normalbody, name=Definição]{defn}
+\declaretheorem[numberwithin=section, style=normalbody, name=Corolário]{corl}
+\declaretheorem[numberwithin=section, style=normalbody, name=Lema]{lem}
+\declaretheorem[numbered = no, style=normalbody, name=Solução]{solution}
+\declaretheorem[numberwithin=subsection, style=normalbody, name=Exercício]{exer}
+\declaretheorem[numbered = no, style=normalbody, name=Axioma]{axm}
+
+%% Theorems styles
+\NewEnviron{lemma}{
+    \cl{green!15}
+    \begin{shaded}
+    \begin{lem}
+    \BODY
+    \end{lem}
+    \end{shaded}
+}
+
+\NewEnviron{axiom}{
+    \cl{yellow!30}
+    \begin{shaded}
+    \begin{axm}
+    \BODY
+    \end{axm}
+    \end{shaded}
+}
+
+\NewEnviron{theorem}{
+    \cl{blue!15}
+    \begin{shaded}
+    \begin{thm}
+    \BODY
+    \end{thm}
+    \end{shaded}
+}
+
+\NewEnviron{definition}{
+    \cl{orange!15}
+    \begin{shaded}
+    \begin{defn}
+    \BODY
+    \end{defn}
+    \end{shaded}
+}
+
+\NewEnviron{corollary}{
+    \cl{purple!15}
+    \begin{shaded}
+    \begin{corl}
+    \BODY
+    \end{corl}
+    \end{shaded}
+}
+
+\NewEnviron{exercise}{
+    \cl{red!15}
+    \begin{shaded}
+    \begin{exer}
+    \BODY
+    \end{exer}
+    \end{shaded}
+}

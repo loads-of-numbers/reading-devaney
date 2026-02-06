@@ -1,0 +1,80 @@
+% Diário de leitura de "An Introduction to Chaotic Dynamical Systems (2nd edition)", de Robert L. Devaney. Contém anotações sobre conceitos importantes, resoluções de exercícios e qualquer outra forma de texto que eu julgar importante ou interessante; mas, principalmente, exercícios. Por ser de uma natureza mais pessoal, tudo está um pouco fora de ordem.
+
+\documentclass[11pt]{article}
+
+%% ----- Import Preamble -----
+\usepackage{preamble}
+\usepackage{accents}
+
+%% Document
+
+\begin{document}
+\section{Cap. 3}
+\subsection{Exercícios}
+\textbf{(1/2) a)} Para todo $x_0 \in \mathbb{R}$, converge para o número de Dottie $D = 0,739085133...$ — o único ponto fixo de $f(x) = \cos x$.
+
+\textbf{b)} Para todo $x_0 \in \mathbb{R}$, converge — muito lentamente — para o único ponto fixo: 0.
+
+\textbf{c)} Sem ponto fixo. Diverge para $+\infty$.
+
+\textbf{d)} Para $x < 1$, converge para 1, o único ponto fixo. Para $x > 1$, diverge para $+\infty$.
+
+\textbf{e)} Para todo $x_0 \in \mathbb{R}$, converge — muito lentamente — para o único ponto fixo: 0. \qed
+
+\textbf{(3/4/5)} Muita coisa para escrever. Fiz em rascunhos. \qed
+
+\textbf{(6)} \textcolor{red}{Concluído, redigir.}
+
+\textbf{(7)} Se $f$ é homeomorfismo de $\mathbb{R}$, deve ser uma função monótona estrita (pois é injetora e contínua). Sejam $x_0 < x_1 < \cdots < x_n$ os pontos da órbita periódica de período primo $n > 2$; note que $f$ aplicada a tal órbita é uma bijeção $\{x_0, \cdots, x_n\} \to \{x_0, \cdots, x_n\}$. Caso $f$ seja decrescente, $f(x_0) > f(x_1) > \cdots > f(x_n)$ e, como $f(x_0)$ é maior que todos os outros elementos, $f(x_0) = x_n$. Analogamente, $f(x_n)$ é menor que os outros, então $f(x_n) = x_0$. Disso, já tiramos uma contradição, pois $x_0 \to x_n \to x_0$ forma um ciclo fechado sem os elementos restantes; impossível.
+
+Caso $f$ seja crescente, mudemos levemente a notação: seja $x_0 \in \mathbb{R}$ um valor inicial da órbita periódica e $x_k = f^k(x_0)$. Assim, como $f(x_0) \neq x_0$, $x_0 < x_1$ ou $x_0 > x_1$; por indução, pois $x_{n} = f(x_{n-1})$, temos $x_0 < x_1 < \cdots < x_n$ ou $x_0 > x_1 > \cdots > x_n$. Mas sabemos que $x_n = x_0$, e chegamos numa contradição em ambos os casos.
+
+Para o exemplo pedido, basta tomar $g(x) = -x$ e verificar que ela satisfaz as condições. \qed
+
+\textbf{(8)} Suponha $f$ uma função com um ponto eventualmente periódico $x_0 \in \mathbb{R}$, de período primo $n$; como $x_0$ não é periódico, existe um menor $m \in \mathbb{N}$ tal que $f^{m + n}(x_0) = f^m(x_0)$, $m \neq 0$. Portanto, $m - 1 \in \mathbb{N}$. Note, assim, que $f(f^{m-1}(x_0)) = f^m(x_0) = f(f^{m + n - 1}(x_0))$, mas $f^{m-1}(x_0) \neq f^{m+n-1}(x_0)$ porque, senão, $m$ não seria o menor natural com a propriedade definida. Assim, $f$ não pode ser injetora e, em particular, não pode ser um homeomorfismo.
+
+É interessante observar que esse argumento é facilmente generalizado para uma injeção em um espaço topológico qualquer. \qed
+
+\textbf{(9)} \textcolor{red}{Fazer.} \qed
+
+\textbf{(10)} Identifiquemos $S^1$ como $[0, 2\pi)$; como visto no livro, para o mapa dado, $x \in \text{Per}_n(f) \iff x = 2\pi k/(2^n - 1),\ 0 \leq k \leq 2^n - 2$, ou seja, $x$ representa uma $(2^n - 1)$-ésima raiz da unidade. Então, defina $S = \bigcup_{n=1}^{\infty} \text{Per}_n(f)$, isto é, o conjunto de todos os pontos periódicos de $f$, independente do período. 
+
+Tome $x_0 \in [0, 2\pi)$ qualquer, $\epsilon > 0$ e seja $I := (x_0 - \epsilon, x_0 + \epsilon) \subset \mathbb{R}$. Sabemos que as raízes da unidade são distribuídas uniformemente em $S^1$, e, para um $n$ qualquer, a distância de uma para a próxima é $L_n = 2\pi (k+1)/(2^n - 1) - 2\pi k/(2^n - 1) = 2\pi/(2^n - 1)$; sabemos que $L_n \to 0$ quando $n \to \infty$. Portanto, tome $m \in \mathbb{N}$ t.q. $L_m < 2\epsilon$ e, assim, é fácil ver que, com $2^m - 1$ raízes distribuídas uniformemente em $[0, 2\pi)$ e uma distância de $L_m$ dentre elas, deve haver ao menos uma raíz em $I$.
+
+Concluímos que $S$ é denso em $S^1$. \qed
+
+\textbf{(11)} Argumento essencialmente idêntico ao anterior, pois um ponto é eventualmente fixo para esse mapa sse é da forma $\theta_k = 2\pi k/2^n$ para algum $n \in \mathbb{N}$ e $0 \leq k \leq 2^n - 1$. \qed
+
+\section{Cap. 4}
+\subsection{Exercícios}
+\textbf{(1)} Nos rascunhos. \qed
+
+\textbf{(2)} Nos rascunhos. \qed
+
+\textbf{(3)} Suponha que existe uma sequência de pontos fixos hiperbólicos $(x_n)_{n\in\mathbb{N}}$ que converge para $p$, outro ponto fixo distinto dos $x_n$. Como $f$ é difeomorfismo, $f'(p)$ existe e
+\[f'(p) = \lim_{x\,\to\,p}{\frac{f(x) - f(p)}{x - p}}.\]
+Já que $x_n \to p$ e $x_n \neq p\ \forall n \in \mathbb{N}$, pelo teorema de Heine,
+\[\lim_{x\,\to\,p}{\frac{f(x) - f(p)}{x - p}} = \lim_{n\to\infty}{\frac{f(x_n) - f(p)}{x_n-p}} = \lim_{n\to\infty}{\frac{x_n - p}{x_n-p}} = 1,\]
+o que contradiz a hiperbolicidade de $p$. Ou seja, os pontos fixos hiperbólicos de qualquer difeomorfismo são isolados.
+
+Agora, finalizamos observando que $f$ é homeomorfismo em $\mathbb{R}$, então seus pontos periódicos são de período 1 ou 2 apenas. Além disso, é claro que $\text{Per}_2(f) = \text{Fix}(f^2)$ e que $\text{Fix}(f) = \text{Per}_1(f) \subset \text{Per}_2(f)$. Portanto, como composição de difeomorfismos é difeomorfismo, $f^2$ é difeomorfismo e analisar seus pontos fixos implica em analisar todos os pontos periódicos de $f$. Isto é, o resultado dos parágrafos acima garante que os pontos periódicos de $f$ são isolados. \qed
+
+\textbf{(4)} Defina o \textit{tent map} $T\colon [0,1] \to [0,1]\colon$
+\[T(x) = \begin{cases}
+    2x,\ 0 \leq x \leq 1/2 \\
+    2(1-x),\ 1/2 \leq x \leq 1
+\end{cases}\]
+Para cada $n \in \mathbb{N}$, tome um $1/2^n \leq p \leq 1/2^{n-1}$ qualquer; então, $0 \leq 2^m p \leq 1/2^{n-m-1} < 1/2$ para todo $m < n - 1$, mas $1/2 \leq 2^{n-1}p \leq 1$. Assim, compondo $n-1$ vezes a função $2x$ e a função $2(1 - x)$ uma vez, nessa ordem, temos
+\[T^n(p) = 2(1 - 2^{n-1}p).\]
+Também note que
+\[T^n(p) = p \iff p = \frac{2}{2^n + 1}.\]
+Isto é, para cada $n \in \mathbb{N}$, $p_n = 2/(2^n + 1)$ é um ponto de período $n$ de $T$. É claro que $p_n \to 0$ quando $n \to \infty$ e, além disso, se $n > 0$,
+\[\left|(T^n)'(p)\right| = \left|-2^n\right| = 2^n \neq 1,\]
+então todo $p_n$ é hiperbólico. Concluímos observando que $0$ é um ponto fixo de $T$ e $f'(0) = 2 \neq 1$; ou seja, $0$ é um ponto não-isolado no conjunto dos pontos periódicos hiperbólicos. \qed
+
+\textbf{(5)} \textcolor{red}{Fazer.} \qed
+
+\textbf{(6)} \textcolor{red}{Fazer.} \qed
+
+\textbf{(7)} \textcolor{red}{Fazer.} \qed
+\end{document}
