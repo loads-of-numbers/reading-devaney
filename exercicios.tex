@@ -35,7 +35,11 @@ Para o exemplo pedido, basta tomar $g(x) = -x$ e verificar que ela satisfaz as c
 
 É interessante observar que esse argumento é facilmente generalizado para uma injeção em um espaço topológico qualquer. \qed
 
-\textbf{(9)} \textcolor{red}{Fazer.} \qed
+\textbf{(9)} Identificando $S^1$ com $\mathbb{R}/2\pi\mathbb{Z}$, temos que $S$ é um mapa cujo levantamento para $\mathbb{R}$ é dado por $s(x) = x + \omega + \epsilon\sin(x)$, onde $S(\theta) = s(\theta) \mod 2\pi$. Note que, se provarmos que $s$ é injetora e sua imagem mod $2\pi$ é sobrejetora em $[0,2\pi)$, teremos que $S$ é uma bijeção.
+
+Para tal, temos $s'(x) = 1 + \epsilon\cos(x) \geq 1 - |\epsilon| > 1 - 1 = 0$ (pois $|\epsilon| < 1$ e $|\cos(x)| \leq 1$), implicando que $s$ é estritamente crescente; de fato, injetora. Além disso, observe que $s(0) = \omega$ e $s(2\pi) = \omega + 2\pi$ e, como $s$ é contínua, o teorema do valor intermediário nos garante que $[\omega, \omega + 2\pi] \subset s([0,2\pi])$. Mas é claro que $\{x$ mod $2\pi\ |\ x \in [\omega, \omega + 2\pi]\} = [0,2\pi]$ e, assim, $s$ restrita e induzida a $[0,2\pi)$ é sobrejetora também. Juntando tudo, temos o que queríamos.
+
+Por fim, como $S^1$ é compacto e Hausdorff, temos que $S$ é uma bijeção contínua de um espaço compacto a um espaço Hausdorff. Então, é automaticamente um homeomorfismo. \qed
 
 \textbf{(10)} Identifiquemos $S^1$ como $[0, 2\pi)$; como visto no livro, para o mapa dado, $x \in \text{Per}_n(f) \iff x = 2\pi k/(2^n - 1),\ 0 \leq k \leq 2^n - 2$, ou seja, $x$ representa uma $(2^n - 1)$-ésima raiz da unidade. Então, defina $S = \bigcup_{n=1}^{\infty} \text{Per}_n(f)$, isto é, o conjunto de todos os pontos periódicos de $f$, independente do período. 
 
