@@ -54,7 +54,7 @@ Concluímos que $S$ é denso em $S^1$. \qed
 \subsection{Exercícios}
 \textbf{(1)} Nos rascunhos. \qed
 
-\textbf{(2)} Nos rascunhos. \qed
+\textbf{(2)} \textcolor{red}{Feito até (b).} \qed
 
 \textbf{(3)} Suponha que existe uma sequência de pontos fixos hiperbólicos $(x_n)_{n\in\mathbb{N}}$ que converge para $p$, outro ponto fixo distinto dos $x_n$. Como $f$ é difeomorfismo, $f'(p)$ existe e
 \[f'(p) = \lim_{x\,\to\,p}{\frac{f(x) - f(p)}{x - p}}.\]
@@ -79,7 +79,26 @@ então todo $p_n$ é hiperbólico. Concluímos observando que $0$ é um ponto fi
 
 \textbf{(5)} \textcolor{red}{Fazer.} \qed
 
-\textbf{(6)} \textcolor{red}{Fazer.} \qed
+\textbf{(6)} Buscando por pontos fixos, $x^3 - \alpha x = x \iff x[x^2 - (\alpha + 1)] = 0$; caso $\alpha \in (-1,1]$, $f_\alpha$ tem três pontos fixos — $x_0 = 0,\ x_{\pm} = \pm\sqrt{\alpha + 1}$ — e, caso $\alpha \in (-\infty, -1]$, $f_\alpha$ tem apenas um ponto fixo ($x_0 = 0$). Portanto, $\alpha = -1$ é um ponto de bifurcação. 
 
-\textbf{(7)} \textcolor{red}{Fazer.} \qed
+Além disso, $f_\alpha'(x) = 3x^2 - \alpha$, então $f'_\alpha(x_0) = -\alpha$ e $f'(x_\pm) = 2\alpha + 3$. Analisando as derivadas, concluímos que os retratos de fase são da seguinte forma (aqui, R indica um ponto repulsor, A indica um ponto atrator e N indica um ponto não-hiperbólico):
+\begin{equation*}
+    \begin{aligned} 
+        & \boxed{\alpha \in (-1,1)}: (x_{-},x_0,x_{+}) = (\text{R, A, R}) \\
+        & \boxed{\alpha \in (-\infty\,-1)}: (x_0) = (\text{R})
+    \end{aligned}
+    \ \ \ \ \ \ \ 
+    \begin{aligned}
+        & \boxed{\alpha = 1}: (x_{-}, x_0, x_{+}) = (\text{R, NA, R}) \\
+        & \boxed{\alpha = -1}: (x_0) = (\text{NR})
+    \end{aligned}
+\end{equation*}
+
+Analisou-se a atração ou repulsão dos pontos não-hiperbólicos observando o seguinte: $|f_{-1}(x)| = |x + x^3| > |x|$ implica que pontos próximos de $x_0$ se afastarão dele (aumentando de magnitude). Semelhantemente, $|f_1(x)| = |x^3 - x| \leq |x| - |x^3| \leq |x|$ para $x \in [-1,1]$, então pontos próximos de $x_0$ se aproximarão dele (diminuindo de magnitude).
+
+Por fim, para $\alpha > 1$, observe que $f'_\alpha(x_0) < -1$ e, portanto, $x_0$ se torna repulsor. Portanto, $\alpha = 1$ também é um ponto de bifurcação. Variando o $\alpha$ e buscando por outros pontos não-hiperbólicos através das derivadas nos pontos fixos, não encontra-se nenhum outro no intervalo dado; conclui-se que $\alpha_{\pm} = \pm1$ são os únicos pontos de bifurcação que nos interessam. \qed
+
+\textbf{(7)} Se $f_k(x) = kx$, então o único ponto fixo é $x = 0$ e $f_k'(0) = k$. Se $k > 1$, a origem é repulsora; se $0 < k < 1$, a origem é atratora; se $-1 < k < 0$, a origem é atratora; e, se $k < -1$, a origem é repulsora. Assim, temos nossos quatro conjuntos abertos para valores de $k$: $(-\infty,-1),\ (-1,0),\ (0,1),\ (1,\infty)$.
+
+Sobre os casos excepcionais: em $f_0(x) = 0$, todo ponto é eventualmente fixo. Em $f_1(x) = x$, todo ponto é fixo. E, em $f_{-1}(x) = -x$, todo ponto (exceto o 0) é de período primo 2. \qed
 \end{document}
