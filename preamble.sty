@@ -20,7 +20,7 @@
 
 %% Pagestyle
 \newlength{\tabcont}
-\colorlet{shadecolor}{orange!15}
+\colorlet{shadecolor}{gray!15}
 \parindent 0in
 \geometry{margin=1in, headsep=0.25in}
 \newtheorem{note}{Nota}
@@ -42,7 +42,7 @@
 \newcommand\restr[2]{{\left.\kern-\nulldelimiterspace#1\vphantom{\big|}\right|_{#2}}}
 \newcommand\floor[1]{{\left\lfloor#1\right\rfloor}}
 \newcommand\ceil[1]{{\left\lceil#1\right\rceil}}
-\renewcommand*{\proofname}{Prova}
+\renewcommand*{\proofname}{Demonstração}
 \renewcommand\refname{Referências Bibliográficas}
 \newcommand{\cl}[1]{\colorlet{shadecolor}{#1}}
 \DeclareMathOperator{\cf}{cf}
@@ -63,7 +63,7 @@
 
 %% Theorems styles
 \NewEnviron{lemma}{
-    \cl{green!15}
+    \cl{gray!15}
     \begin{shaded}
     \begin{lem}
     \BODY
@@ -72,7 +72,7 @@
 }
 
 \NewEnviron{axiom}{
-    \cl{yellow!30}
+    \cl{gray!15}
     \begin{shaded}
     \begin{axm}
     \BODY
@@ -81,7 +81,7 @@
 }
 
 \NewEnviron{theorem}{
-    \cl{blue!15}
+    \cl{gray!15}
     \begin{shaded}
     \begin{thm}
     \BODY
@@ -90,7 +90,7 @@
 }
 
 \NewEnviron{definition}{
-    \cl{orange!15}
+    \cl{gray!15}
     \begin{shaded}
     \begin{defn}
     \BODY
@@ -99,7 +99,7 @@
 }
 
 \NewEnviron{corollary}{
-    \cl{purple!15}
+    \cl{gray!15}
     \begin{shaded}
     \begin{corl}
     \BODY
@@ -108,7 +108,7 @@
 }
 
 \NewEnviron{exercise}{
-    \cl{red!15}
+    \cl{gray!15}
     \begin{shaded}
     \begin{exer}
     \BODY
