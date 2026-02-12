@@ -103,10 +103,37 @@ Por fim, para $\alpha > 1$, observe que $f'_\alpha(x_0) < -1$ e, portanto, $x_0$
 Sobre os casos excepcionais: em $f_0(x) = 0$, todo ponto é eventualmente fixo. Em $f_1(x) = x$, todo ponto é fixo. E, em $f_{-1}(x) = -x$, todo ponto (exceto o 0) é de período primo 2. \qed
 
 \section{An example: the quadratic family}
+\subsection{Caracterização do conjunto de Cantor}
+Acredito que o resultado a seguir é interessante por si só para merecer a própria seção; contudo, ele também nos auxiliará com alguns exercícios mais adiante.
+
+\begin{lemma}\label{lem:cantor_ternary}
+    Seja $\mathcal{C}$ o conjunto ternário de Cantor. Então, $p \in \mathcal{C} \iff p = 0.X_1X_2X_3\dots_3$, onde $X_i \in \{0,2\}\ \forall i \in \mathbb{N}$ — isto é, $\mathcal{C}$ é composto exatamente dos pontos em $[0,1]$ que admitem uma representação apenas de $0$s e $2$s em base $3$.
+\end{lemma}
+
+\begin{proof}
+    Tome 
+    \[p = 0.X_1X_2X_3\dots X_k \dots_3 = \sum^{\infty}_{k=1}{\frac{X_k}{3^k}},\]
+    como acima. Suponha que existe um menor $n \in \mathbb{N}$ tal que $X_n = 1$ e os próximos dígitos não são apenas 0s ou apenas 1s (senão, $p$ é da forma $0.000\ldots0111\ldots = 0.000\ldots02$ ou $0.000\ldots01 = 0.000\ldots0222\ldots$, ambos podendo ser representados apenas com $0$s e $2$s); provaremos que todos os $p$ sob essas condições formam exatamente $\text{I} \setminus \mathcal{C}$. \textcolor{red}{Finalizar.}
+\end{proof}
+
 \subsection{Exercícios}
 \textbf{(1)} Idêntico à primeira parte da demonstração da proposição 5.3 no livro. \qed
 
-\textbf{(8)} Sejam $\{\mathcal{C}_0,\ \mathcal{C}_1,\ \mathcal{C}_2,\ \cdots\}$ as etapas de construção de $\mathcal{C}$, o conjunto de Cantor canônico. \textcolor{red}{Finalizar e redigir.}
+\textbf{(2)} Note que $F(x) = x \iff \mu x(1-x) = x \iff x[\mu x - (\mu - 1)] = 0$, então $x_1 = 0$ ou $x_2 = \frac{\mu - 1}{\mu}$ são os pontos fixos de $F$. Caso $0 < \mu \leq 1$, $x_2 \leq 0$; mas $F(x) \geq 0$ para $x \in \text{I}$, então nenhuma órbita com valor inicial em I pode convergir para $x_2$ (a não ser que ele seja nulo, $x_1 = x_2$). Além disso, observe que $F(x) = \mu x (1-x) \leq x(1-x) \leq x$, pois $\mu \in (0,1]$ e $1-x \leq 1$ para $x \in \text{I}$; isto é, as órbitas com valores iniciais em I são decrescentes.
+
+Como órbitas monótonas em conjuntos compactos devem convergir para algum ponto fixo, $F^n(x)$, $x$ em I, deve convergir para o único ponto fixo disponível: $x_1 = 0$. \qed
+
+\textbf{(8)} Seja $\mathcal{C}$ o conjunto ternário de Cantor e sejam $A_0,\ A_1,\ A_2, \ldots$ as uniões de intervalos abertos retiradas a cada etapa de construção. Assim,
+\[\mathcal{C} = \text{I}\ \setminus \left(\bigcup^{\infty}_{n=0}A_n\right).\]
+\underline{Fechado}: Pelas leis de De Morgan,
+\[\mathcal{C} = \text{I}\ \cap \bigcap^{\infty}_{n=0}A_n^c,\]
+que é uma intersecção de conjuntos fechados e, portanto, fechada. 
+
+\underline{Não-vazio}: $0 = 0.000\ldots$ é representado apenas por 0s em base 3, então o lema \ref{lem:cantor_ternary} garante que $0 \in \mathcal{C}$.
+
+\underline{Perfeito}: Se $p \in \mathcal{C}$, represente-o como 0s e 2s em base 3 e tome a sequência $(p_n)_{n \in \mathbb{N}}$ onde $p_n$ possui os mesmos dígitos que $p$ exceto pelo n-ésimo dígito, que é trocado (0 é trocado por 2 e 2 é trocado por 0). É claro que $p_n \neq p$ e $p_n \in \mathcal{C}$ para todo $n \in \mathbb{N}$; além disso, como $|p_n - p| = 2/3^n \to 0$ quando $n \to \infty$, então $p_n \to p$. Portanto, todo $p \in \mathcal{C}$ é ponto de acumulação.
+
+\underline{Totalmente desconexo}: Caso existisse um intervalo $[x,y] \subset \mathcal{C}$, teríamos que a medida $L$ de $\mathcal{C}$ seria, ao menos, $L \geq |x-y| > 0$, contradizendo o resultado do exercício (9) abaixo. \qed
 
 \textbf{(9)} Na n-ésima etapa de construção de $\mathcal{C}$, retira-se $2^{n-1}$ intervalos de comprimento $1/3^n$ cada, do conjunto da etapa anterior. Isto é, denotando por $L_n$ a soma dos comprimentos na n-ésima etapa:
 \[L_n = L_{n-1} - \frac{2^{n-1}}{3^n}.\]
@@ -129,4 +156,10 @@ e, portanto, $L_n \to L_\infty = 1 - \frac{1}{3}\cdot3 = 1-1 = 0$. \qed
 e, assim,
 \[L_\infty = 1 - \frac{1}{5}\cdot\frac{1}{1 - 4/5} = 1 - \frac{1}{5}\cdot5 = 0,\]
 da mesma forma que no exercício anterior. Interessantemente, o processo pode ser generalizado para qualquer conjunto de Cantor onde se retira uma fração fixa $\alpha$ ($0 < \alpha < 1$) do meio dos subintervalos e, ainda assim, o comprimento final sempre será $L_\infty = 0$. \qed
+
+\textbf{(11)} Nesse exercício, por conveniência, a discussão será feita exclusivamente em base 3, onde $3_{10} = 10_3$ e uma multiplicação por $3$ equivale a um deslocamento da vírgula. $L\colon \mathcal{C} \cap [0,1/3] \to \mathcal{C}$ é escrita como $L(x) = 10x$; é claro que $L$ é contínua e, além disso, é fácil verificar que possui inversa $L^{-1}\colon \mathcal{C} \to \mathcal{C} \cap [0,1/3]$ dada por $L^{-1}(x) = x/10$, que também é claramente contínua. Basta mostrar que as imagens de $L$ e $L^{-1}$ estão, de fato, nos respectivos contradomínios.
+
+Um ponto $x$ pertence a $\mathcal{C} \cap [0,1/3]$ se e somente se está em $\mathcal{C}$ e seu primeiro dígito (na representação com 0s e 2s) após a vírgula é 0, pois $x \leq 1/3$; ou seja, $x = 0.0X_1X_2\ldots$, com $X_i \in \{0,2\}$. Portanto, se $p = 0.Y_1Y_2Y_3\ldots$ pertence a $\mathcal{C}$, temos que $L^{-1}(p) = 1/10 \cdot 0.Y_1Y_2Y_3\ldots = 0.0Y_1Y_2\ldots \in \mathcal{C} \cap [0,1/3]$, como queríamos — já que os dígitos continuam sendo 0 ou 2 e o primeiro dígito é sempre 0. Semelhantemente, $L(0.0Y_1Y_2\ldots) = 0.Y_1Y_2\ldots \in \mathcal{C}$ para todo $0.0Y_1Y_2\ldots \in \mathcal{C} \cap [0,1/3]$. Assim, as funções estão bem-definidas e $L$ é um homeomorfismo. \qed
+
+\textbf{(12)} \textcolor{red}{Fazer.}
 \end{document}
